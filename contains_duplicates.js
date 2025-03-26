@@ -1,6 +1,8 @@
+//leetCode: 217
 class Solution {
   static firstMethod(arr) {
-    // time and Space: O(N^2)
+    // time : O(N^2)
+    // space: O(1)
     for (let i = 0; i < arr.length; i++) {
       for (let j = i + 1; j < arr.length; j++) {
         if (arr[i] == arr[j]) {
@@ -19,6 +21,20 @@ class Solution {
     }
     return true;
   }
+
+  static thirdMethod(arr) {
+    // time: O(N^2)
+    // space: O(N)
+    const tempArr = [];
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] in tempArr) {
+        return true;
+      } else {
+        tempArr.push(arr[i]);
+      }
+    }
+    return false;
+  }
 }
 
 const arr1 = [1, 2, 3, 1];
@@ -35,3 +51,8 @@ console.log("Second Method");
 console.log(Solution.secondMethod(arr1));
 console.log(Solution.secondMethod(arr2));
 console.log(Solution.secondMethod(arr3));
+
+console.log("Third Method");
+console.log(Solution.thirdMethod(arr1));
+console.log(Solution.thirdMethod(arr2));
+console.log(Solution.thirdMethod(arr3));

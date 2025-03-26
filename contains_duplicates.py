@@ -1,7 +1,10 @@
+#leetCode: 217
+
 class Solution:
     @staticmethod
     def firstMethod(arr):
-    #  time and Space: O(N^2)
+        # time : O(N^2)
+        # space: O(1)
         for i in range(0,len(arr)):
             for j in range(i+1, len(arr)):
                 if(arr[i] == arr[j]):
